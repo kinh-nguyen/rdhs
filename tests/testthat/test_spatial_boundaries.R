@@ -27,11 +27,6 @@ test_that("Spatial Boundaries Download", {
    expect_true(res$sdr_subnational_boundaries$ISO[1] == "AF")
    expect_is(res$sdr_subnational_boundaries, "sf")
 
-   # using rgdal
-   res <- download_boundaries(surveyNum = 471, countryId = "AF", method = "rgdal")
-   expect_true(res$sdr_subnational_boundaries$ISO[1] == "AF")
-   expect_is(res$sdr_subnational_boundaries, "SpatialPolygonsDataFrame")
-
    # unsupported method
     expect_message(res <- download_boundaries(surveyNum = 471, countryId = "AF",
                                               method = "jibberish"),

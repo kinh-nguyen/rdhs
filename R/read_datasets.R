@@ -81,13 +81,7 @@ read_dhs_dataset <- function(file, dataset,
 
     # dbf is a bit different due to the arguments of readOGR
     # so we have to unzip here and handle
-    unzipped_files <- suppressWarnings(unzip(file, exdir = tempfile()))
-    file <- unzipped_files[which(toupper(filetype) %in% toupper(file_types))]
-    res <- list(
-      "dataset" = rgdal::readOGR(dsn = dirname(file),
-                                 layer = strsplit(basename(file),
-                                                  ".", fixed = TRUE)[[1]][1])
-    )
+    error('rgdal is retired.')
     # 6. Geospatial Covariate files (csv)
   } else if (file_match == 6) {
 

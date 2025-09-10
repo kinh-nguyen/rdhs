@@ -128,11 +128,7 @@ download_boundaries <- function(surveyNum=NULL,
   if (method %in% methods) {
 
     if(method == "rgdal") {
-      res <- lapply(file, function(x) {
-        layer <- strsplit(basename(x), ".", fixed = TRUE)[[1]][1]
-        rgdal::readOGR(dsn = dirname(x), layer = layer)
-      })
-      names(res) <- vapply(file, rgdal::ogrListLayers, character(1))
+      error('rgdal is retired.')
     }
 
     # here if we want to add more read in options

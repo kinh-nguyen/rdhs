@@ -41,7 +41,6 @@ Imports:
     storr,
     xml2,
     qdapRegex,
-    rgdal,
     getPass,
     haven,
     iotools
