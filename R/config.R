@@ -151,6 +151,7 @@ handle_config <- function(config_path) {
 #'
 set_rdhs_config <- function(email = NULL,
                             project = NULL,
+                            password = NULL,
                             cache_path = NULL,
                             config_path = NULL,
                             global = TRUE,
@@ -236,7 +237,7 @@ set_rdhs_config <- function(email = NULL,
       Sys.setenv("RDHS_USER_PASS" = password)
     }
   } else {
-    password <- NULL
+    password <- password
   }
 
   dat <- list(email = email,
