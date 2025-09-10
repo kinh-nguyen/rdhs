@@ -254,10 +254,8 @@ set_rdhs_config <- function(email = NULL,
 
   config <- write_rdhs_config_file(dat, config_path)
 
-  # and then create the package internal client if we are meant to
-  if (.rdhs$internal_client_update) {
-    .rdhs$client <- client_dhs(config = config, root = config$cache_path)
-  }
+  # update when rerun
+  .rdhs$client <- client_dhs(config = config, root = config$cache_path)
 
   invisible(config)
 }
@@ -435,9 +433,7 @@ update_rdhs_config <- function(password = FALSE,
   config <- write_rdhs_config_file(config, config$config_path)
 
   # and then create the package internal client if we are meant to
-  if (.rdhs$internal_client_update) {
-    .rdhs$client <- client_dhs(config = config, root = config$cache_path)
-  }
+  .rdhs$client <- client_dhs(config = config, root = config$cache_path)
 
 }
 
